@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo "build on maven"
                 sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
             }
             post {
@@ -14,6 +15,7 @@ pipeline {
         }
         stage('Testdemo') {
             steps {
+                echo "test on maven"
                 sh 'mvn -f hello-app/pom.xml test'
             }
             post {
